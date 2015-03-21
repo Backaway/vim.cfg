@@ -224,3 +224,7 @@ let g:solarized_visibility="normal"
 Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => dash.vim dashAPI插件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'rizzatti/dash.vim'
