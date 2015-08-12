@@ -50,6 +50,7 @@ Bundle 'Valloric/YouCompleteMe'
 " let g:ycm_key_list_select_completion = ['<Down>']
 " let g:ycm_key_list_previous_completion=['<c-p>']
 " let g:ycm_key_list_previous_completion = ['<Up>']
+let g:EclimCompletionMethos = 'omnifunc' " 使用Eclim进行自动补全
 let g:ycm_confirm_extra_conf=0      " 关闭加载.ycm_extra_conf.py提示
 let g:ycm_complete_in_comments = 1  "在注释输入中也能补全
 let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
@@ -207,16 +208,21 @@ set laststatus=2
 set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
 set encoding=utf-8
 let g:airline_powerline_fonts=1
-let g:airline_theme="solarized"
+" let g:airline_theme="solarized"
+let g:airline_theme="molokai"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => solarized 主题
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'altercation/vim-colors-solarized'
+" Bundle 'altercation/vim-colors-solarized'
 "let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_contrast="normal"
-let g:solarized_visibility="normal"
+" let g:solarized_termtrans=1
+" let g:solarized_contrast="normal"
+" let g:solarized_visibility="normal"
+
+Bundle 'tomasr/molokai'
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-markdown Markdown语法高亮

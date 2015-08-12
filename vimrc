@@ -242,6 +242,7 @@ set wildignore=*.o,*~,*.pyc,*.class
 
 "离开插入模式后自动关闭预览窗口
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
 "回车即选中当前项
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 
@@ -274,6 +275,9 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+
+" CTRL A 全选
+map <C-A> ggVG <S-end>
 
 " F1 - F6 设置
 " F1 废弃这个键,防止调出系统帮助
@@ -434,8 +438,12 @@ endif
 
 " theme主题
 set background=dark
-colorscheme solarized
+" molokai
+colorscheme molokai
 set t_Co=256
+
+" solarized
+" colorscheme solarized
 
 "设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr
