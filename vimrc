@@ -434,7 +434,8 @@ endif
 
 " theme主题
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+colorscheme molokai
 set t_Co=256
 
 "设置标记一列的背景颜色和数字一行颜色一致
