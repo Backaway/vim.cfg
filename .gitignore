@@ -4,3 +4,5 @@ bundle/*
 *.bk
 configs
 myconfig.sh
+eclim
+plugin

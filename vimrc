@@ -2,8 +2,7 @@
 " Author:  Junevimer
 " Fork From: wklken
 " Version: 2.0
-" Email: junevimer@gmail.com
-" BlogPost: www.junevimer.com
+" Email: whz.job@gmail.com
 " ReadMe: README.md
 " Last_modify: 2014-03-15
 " Sections:
@@ -234,6 +233,9 @@ autocmd! bufwritepost .vimrc source % " vimrc文件修改之后自动加载。 l
 " 自动补全配置
 "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 set completeopt=longest,menu
+
+" vim与系统共享剪切板
+set clipboard+=unnamed
 
 " 增强模式中的命令行自动完成操作
 set wildmenu
