@@ -1,10 +1,11 @@
 snippet blog "jekyll blog title" 
 ---
 layout: post
-title: $1
-description: ""
-category: "$2"
-tags: [$3]
+title: "$1"
+keywords: ["$2"]
+description: "$3"
+category: "$4"
+tags: ["$2"]
 ---
 {% include JB/setup %}
 
@@ -23,4 +24,8 @@ endsnippet
 snippet 3jp "三级标题跳转"
 * [${1:jump}](#$1)
 #### <span id="$1">$1</span>
+endsnippet
+
+snippet pic "2015Pircture“
+![draw90](/images/2015/$1)
 endsnippet
