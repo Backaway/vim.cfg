@@ -323,9 +323,8 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Go to home and end using capitalized directions
-noremap H ^
-noremap L $
-
+" noremap H ^
+" noremap L $
 
 "Map ; to : and save a million keystrokes
 " ex mode commands made easy 用于快速进入命令行

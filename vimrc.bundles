@@ -235,3 +235,38 @@ let g:vim_markdown_folding_disabled=1
 " => dash.vim dashAPI插件
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'rizzatti/dash.vim'
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => minbufexpl插件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bundle 'fholgado/minibufexpl.vim'
+" hi MBENormal               guifg=#808080 guibg=fg
+" hi MBEChanged              guifg=#CD5907 guibg=fg
+" hi MBEVisibleNormal        guifg=#5DC2D6 guibg=fg
+" hi MBEVisibleChanged       guifg=#F1266F guibg=fg
+" hi MBEVisibleActiveNormal  guifg=#A6DB29 guibg=fg
+" hi MBEVisibleActiveChanged guifg=#F1266F guibg=fg
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ranibow-parentheses插件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bundle 'kien/rainbow_parentheses.vim'
+" let g:rbpt_colorpairs = [
+    " \ ['brown',       'RoyalBlue3'],
+    " \ ['Darkblue',    'SeaGreen3'],
+    " \ ['darkgray',    'DarkOrchid3'],
+    " \ ['darkgreen',   'firebrick3'],
+    " \ ['darkcyan',    'RoyalBlue3'],
+    " \ ['darkred',     'SeaGreen3'],
+    " \ ['darkmagenta', 'DarkOrchid3'],
+    " \ ['brown',       'firebrick3'],
+    " \ ['gray',        'RoyalBlue3'],
+    " \ ['black',       'SeaGreen3'],
+    " \ ['darkmagenta', 'DarkOrchid3'],
+    " \ ['Darkblue',    'firebrick3'],
+    " \ ['darkgreen',   'RoyalBlue3'],
+    " \ ['darkcyan',    'SeaGreen3'],
+    " \ ['darkred',     'DarkOrchid3'],
+    " \ ['red',         'firebrick3'],
+    " \ ]
