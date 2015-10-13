@@ -116,7 +116,7 @@ endif
 
 " 跳转到定义处, 分屏打开
 " let g:ycm_goto_buffer_command = 'horizontal-split'
-let g:ycm_goto_buffer_command = 'vertical-split'
+" let g:ycm_goto_buffer_command = 'vertical-split'
 "mapping
 nmap <leader>gd :YcmDiags<CR>
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>           " 跳转到申明处
