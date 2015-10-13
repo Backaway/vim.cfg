@@ -1,10 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Author:  Junevimer
+" Author:  Backaway
 " Fork From: wklken
 " Version: 2.0
 " Email: whz.job@gmail.com
 " ReadMe: README.md
-" Last_modify: 2014-03-15
+" Last_modify: 2015-10-10
 " Sections:
 "       -> Initial Plugin 加载插件
 "       -> General Settings 基础设置
@@ -14,7 +14,6 @@
 "       -> HotKey Settings  自定义快捷键
 "       -> FileType Settings  针对文件类型的设置
 "       -> Theme Settings  主题设置
-"
 "       -> 插件配置和具体设置在vimrc.bundles中
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -84,9 +83,11 @@ set cursorline          " 突出显示当前行
 "设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制
 "好处：误删什么的，如果以前屏幕打开，可以找回
 " set t_ti= t_te=
+" Remember info about open buffers on close"
+" set viminfo^=%
 
 "- 则点击光标不会换,用于复制
-set mouse-=a             " 鼠标暂不启用, 键盘党....
+" set mouse-=a             " 鼠标暂不启用, 键盘党....
 
 " 修复ctrl+m 多光标操作选择的bug，但是改变了ctrl+v进行字符选中时将包含光标下的字符
 "set selection=exclusive
@@ -100,9 +101,6 @@ set novisualbell         " don't beep
 set noerrorbells         " don't beep
 set t_vb=
 set tm=500
-
-" Remember info about open buffers on close"
-" set viminfo^=%
 
 " For regular expressions turn magic on
 set magic
@@ -125,17 +123,19 @@ set showmode
 " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
 set scrolloff=7
 
-" set winwidth=79
-
 " 命令行（在状态行下）的高度，默认为1，这里是2
-" set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 " Always show the status line - use 2 lines for the status bar
 set laststatus=2
 
 "显示行号：
 set number
+
 " 取消换行。
+" set winwidth=79
+
+" 设置自动折行。
 " set nowrap
+set wrap
 
 " 括号配对情况,跳转并高亮一下匹配的括号
 set showmatch
@@ -153,7 +153,7 @@ set ignorecase
 set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
 
 " 代码折叠
-set foldenable
+set foldenable  "开启折叠
 " 折叠方法
 " manual    手工折叠
 " indent    使用缩进表示折叠
@@ -161,8 +161,11 @@ set foldenable
 " syntax    使用语法定义折叠
 " diff      对没有更改的文本进行折叠
 " marker    使用标记进行折叠, 默认标记是 {{{ 和 }}}
-set foldmethod=syntax
-set foldlevel=99
+set foldmethod=syntax   
+set foldcolumn=0    "设置折叠区域的宽度
+" set foldlevel=99  "设置为关闭自动折叠
+" 用空格键来开关折叠
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 缩进配置
 set smartindent   " Smart indent
@@ -223,7 +226,6 @@ set formatoptions+=m
 " 合并两行中文时，不在中间加空格：
 set formatoptions+=B
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => others 其它设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -265,7 +267,7 @@ endif
 
 " 主要按键重定义
 
-" 关闭方向键, 强迫自己用 hjkl
+" 关闭方向键
 map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
@@ -277,9 +279,6 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
-
-" CTRL A 全选
-" map <C-A> ggVG <S-end>
 
 " F1 - F6 设置
 " F1 废弃这个键,防止调出系统帮助
@@ -306,7 +305,6 @@ endfunc
 nnoremap <F2> :call HideNumber()<CR>
 nnoremap <F3> :set list! list?<CR>
 nnoremap <F4> :set wrap! wrap?<CR>
-              "set paste
 set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
                                 "    paste mode, where you can paste mass data
                                 "    that won't be autoindented
@@ -340,7 +338,7 @@ nnoremap ; :
 " 搜索相关
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
+" map <space> /
 " 进入搜索Use sane regexes"
 nnoremap / /\v
 vnoremap / /\v
@@ -384,7 +382,7 @@ vnoremap > >gv
 map Y y$
 
 " select all
-map <C-E> ggVG"
+map <leader>sa ggVG
 
 " select block
 nnoremap <leader>v V`}
@@ -459,46 +457,10 @@ hi! link ShowMarksHLu DiffChange
 " highlight SpellLocal term=underline cterm=underline
 
 "ctags
-set tags+=$HOME/workdir/dvsdk_2_10_01_18/dmai_1_21_00_10/tags
+" set tags+=$HOME/workdir/dvsdk_2_10_01_18/dmai_1_21_00_10/tags
 " set tags+=/home/whz/workdir/dm365/pjproject-1.6/tags
 
 "cscopeverbose
 set cscopetag
 set csto=0
 " cs add $HOME/workdir/dm365/dev_app/cscope.out $HOME/workdir/dm365/dev_app/
-
-" python google风格配置
-" Indent Python in the Google way.
-setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-
-let s:maxoff = 50 " maximum number of lines to look backwards.
-function GetGooglePythonIndent(lnum)
-
-  " Indent inside parens.
-  " Align with the open paren unless it is at the end of the line.
-  " E.g.
-  "   open_paren_not_at_EOL(100,
-  "                         (200,
-  "                          300),
-  "                         400)
-  "   open_paren_at_EOL(
-  "       100, 200, 300, 400)
-  call cursor(a:lnum, 1)
-  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
-        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
-        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
-        \ . " =~ '\\(Comment\\|String\\)$'")
-  if par_line > 0
-    call cursor(par_line, 1)
-    if par_col != col("$") - 1
-      return par_col
-    endif
-  endif
-
-  " Delegate the rest to the original function.
-  return GetPythonIndent(a:lnum)
-
-endfunction
-
-let pyindent_nested_paren="&sw*2"
-let pyindent_open_paren="&sw*2"
