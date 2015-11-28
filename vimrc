@@ -161,9 +161,9 @@ set foldenable  "开启折叠
 " syntax    使用语法定义折叠
 " diff      对没有更改的文本进行折叠
 " marker    使用标记进行折叠, 默认标记是 {{{ 和 }}}
-set foldmethod=syntax   
+set foldmethod=syntax
 set foldcolumn=0    "设置折叠区域的宽度
-" set foldlevel=99  "设置为关闭自动折叠
+set foldlevel=99  "设置为关闭自动折叠
 " 用空格键来开关折叠
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
@@ -177,7 +177,7 @@ set tabstop=4     " 设置Tab键的宽度        [等同的空格个数]
 set shiftwidth=4  " 每一次缩进对应的空格数
 set softtabstop=4 " 按退格键时可以一次删掉 4 个空格
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格
-set expandtab     " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]
+" set expandtab     " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]
 set shiftround    " 缩进时，取整 use multiple of shiftwidth when indenting with '<' and '>'
 
 " A buffer becomes hidden when it is abandoned
@@ -423,7 +423,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
     set guioptions-=T
     set guioptions+=e
     set guioptions-=r

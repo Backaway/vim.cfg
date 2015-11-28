@@ -386,10 +386,10 @@ noremap <leader>bd :MBEbd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => delimitMate插件 自动补全单引号，双引号等
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'Raimondi/delimitMate'
+" Bundle 'Raimondi/delimitMate'
 
 "" for python docstring ",优化输入
-au FileType python let b:delimitMate_nesting_quotes = ['"']
+" au FileType python let b:delimitMate_nesting_quotes = ['"']
 " 关闭某些类型文件的自动补全
 "au FileType mail let b:delimitMate_autoclose = 0
 
