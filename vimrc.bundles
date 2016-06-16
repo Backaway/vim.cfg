@@ -304,6 +304,8 @@ let g:airline_powerline_fonts=1
 " let g:airline_theme="solarized"
 let g:airline_theme="molokai"
 
+Bundle 'vim-airline/vim-airline-themes'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => solarized 主题
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
