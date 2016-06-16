@@ -49,6 +49,9 @@ let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='>'
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_highlighting = 1
+let g:syntastic_mode_map = { 'mode': 'active',
+			\ 'active_filetypes': ['foo', 'bar'],
+			\ 'passive_filetypes': ['java'] }
 " 最轻量
 " let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes
 
@@ -74,12 +77,12 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_loc_list_height = 5
 
 function! ToggleErrors()
-    let old_last_winnr = winnr('$')
-    lclose
-    if old_last_winnr == winnr('$')
-        " Nothing was closed, open syntastic error location panel
-        Errors
-    endif
+	let old_last_winnr = winnr('$')
+	lclose
+	if old_last_winnr == winnr('$')
+		" Nothing was closed, open syntastic error location panel
+		Errors
+	endif
 endfunction
 nnoremap <Leader>s :call ToggleErrors()<cr>
 " nnoremap <Leader>sn :lnext<cr>
@@ -95,7 +98,7 @@ Bundle 'Valloric/YouCompleteMe'
 " let g:ycm_key_list_previous_completion=['<c-p>']
 
 " let g:ycm_key_list_previous_completio:ProjectCreate <path-to-your-project> -n java 创建java project
-let g:EclimCompletionMethos = 'omnifunc' " 使用Eclim进行自动补全(for java)
+" let g:EclimCompletionMethos = 'omnifunc' " 使用Eclim进行自动补全(for java)
 let g:ycm_confirm_extra_conf=0      " 关闭加载.ycm_extra_conf.py提示
 let g:ycm_complete_in_comments = 1  "在注释输入中也能补全
 let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
@@ -107,11 +110,11 @@ let g:ycm_min_num_of_chars_for_completion=2                     " 从第2个键�
 " 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容
 " old version
 if !empty(glob("~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"))
-    let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
+	let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
 endif
 " new version
 if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
-    let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+	let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 endif
 
 " 跳转到定义处, 分屏打开
@@ -127,9 +130,9 @@ nnoremap <leader>gg :YcmCompleter GoTo<CR>
 let g:ycm_key_invoke_completion = '<C-Space>'
 " 黑名单,不启用
 let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'gitcommit' : 1,
-      \}
+			\ 'tagbar' : 1,
+			\ 'gitcommit' : 1,
+			\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YCM-Generator YouCompleteMe配置文件生成工具
@@ -156,19 +159,19 @@ map <leader>us :UltiSnipsEdit<CR>
 
 " ctrl+j/k 进行选择
 func! g:JInYCM()
-    if pumvisible()
-        return "\<C-n>"
-    else
-        return "\<c-j>"
-    endif
+	if pumvisible()
+		return "\<C-n>"
+	else
+		return "\<c-j>"
+	endif
 endfunction
 
 func! g:KInYCM()
-    if pumvisible()
-        return "\<C-p>"
-    else
-        return "\<c-k>"
-    endif
+	if pumvisible()
+		return "\<C-p>"
+	else
+		return "\<c-k>"
+	endif
 endfunction
 inoremap <c-j> <c-r>=g:JInYCM()<cr>
 au BufEnter,BufRead * exec "inoremap <silent> " . g:UltiSnipsJumpBackwordTrigger . " <C-R>=g:KInYCM()<cr>"
@@ -247,9 +250,9 @@ Bundle 'kien/ctrlp.vim'
 " map <leader>f :CtrlPMRU<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz)$',
-    \ }
+			\ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+			\ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz)$',
+			\ }
 "\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_match_window_bottom=1
@@ -358,23 +361,23 @@ noremap <leader>bd :MBEbd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundle 'kien/rainbow_parentheses.vim'
 " let g:rbpt_colorpairs = [
-    " \ ['brown',       'RoyalBlue3'],
-    " \ ['Darkblue',    'SeaGreen3'],
-    " \ ['darkgray',    'DarkOrchid3'],
-    " \ ['darkgreen',   'firebrick3'],
-    " \ ['darkcyan',    'RoyalBlue3'],
-    " \ ['darkred',     'SeaGreen3'],
-    " \ ['darkmagenta', 'DarkOrchid3'],
-    " \ ['brown',       'firebrick3'],
-    " \ ['gray',        'RoyalBlue3'],
-    " \ ['black',       'SeaGreen3'],
-    " \ ['darkmagenta', 'DarkOrchid3'],
-    " \ ['Darkblue',    'firebrick3'],
-    " \ ['darkgreen',   'RoyalBlue3'],
-    " \ ['darkcyan',    'SeaGreen3'],
-    " \ ['darkred',     'DarkOrchid3'],
-    " \ ['red',         'firebrick3'],
-    " \ ]
+" \ ['brown',       'RoyalBlue3'],
+" \ ['Darkblue',    'SeaGreen3'],
+" \ ['darkgray',    'DarkOrchid3'],
+" \ ['darkgreen',   'firebrick3'],
+" \ ['darkcyan',    'RoyalBlue3'],
+" \ ['darkred',     'SeaGreen3'],
+" \ ['darkmagenta', 'DarkOrchid3'],
+" \ ['brown',       'firebrick3'],
+" \ ['gray',        'RoyalBlue3'],
+" \ ['black',       'SeaGreen3'],
+" \ ['darkmagenta', 'DarkOrchid3'],
+" \ ['Darkblue',    'firebrick3'],
+" \ ['darkgreen',   'RoyalBlue3'],
+" \ ['darkcyan',    'SeaGreen3'],
+" \ ['darkred',     'DarkOrchid3'],
+" \ ['red',         'firebrick3'],
+" \ ]
 
 " let g:rbpt_max = 16
 " let g:rbpt_loadcmd_toggle = 0

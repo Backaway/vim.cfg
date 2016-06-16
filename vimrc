@@ -30,7 +30,7 @@ syntax on
 
 " install Vundle bundles
 if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+	source ~/.vimrc.bundles
 endif
 
 " ensure ftdetect et al work by including this after the Vundle stuff
@@ -71,8 +71,8 @@ set noswapfile
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 if v:version >= 730
-    set undofile                " keep a persistent backup file
-    set undodir=/tmp/vimundo/
+	    set undofile                " keep a persistent backup file
+	set undodir=/tmp/vimundo/
 endif
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
@@ -87,12 +87,12 @@ set cursorline          " 突出显示当前行
 " set viminfo^=%
 
 "- 则点击光标不会换,用于复制
-" set mouse-=a             " 鼠标暂不启用, 键盘党....
+set mouse=a             " 鼠标暂不启用, 键盘党....
 
 " 修复ctrl+m 多光标操作选择的bug，但是改变了ctrl+v进行字符选中时将包含光标下的字符
-"set selection=exclusive
+set selection=exclusive
 " set selection=inclusive
-" set selectmode=mouse,key
+set selectmode=mouse,key
 
 " No annoying sound on errors
 " 去掉输入错误的提示声音
@@ -197,11 +197,11 @@ au FocusGained * :set relativenumber
 autocmd InsertEnter * :set norelativenumber number
 autocmd InsertLeave * :set relativenumber
 function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber number
-  else
-    set relativenumber
-  endif
+	if(&relativenumber == 1)
+		set norelativenumber number
+	else
+		set relativenumber
+	endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
@@ -258,7 +258,7 @@ inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 
 " if this not work ,make sure .viminfo is writable for you
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -293,21 +293,21 @@ noremap <F1> <Esc>"
 
 ""为方便复制，用<F2>开启/关闭行号显示:
 function! HideNumber()
-  if(&relativenumber == &number)
-    set relativenumber! number!
-  elseif(&number)
-    set number!
-  else
-    set relativenumber!
-  endif
-  set number?
+	if(&relativenumber == &number)
+		set relativenumber! number!
+	elseif(&number)
+		set number!
+	else
+		set relativenumber!
+	endif
+	set number?
 endfunc
 nnoremap <F2> :call HideNumber()<CR>
 nnoremap <F3> :set list! list?<CR>
 nnoremap <F4> :set wrap! wrap?<CR>
 set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
-                                "    paste mode, where you can paste mass data
-                                "    that won't be autoindented
+"    paste mode, where you can paste mass data
+"    that won't be autoindented
 
 " disbale paste mode when leaving insert mode
 au InsertLeave * set nopaste
@@ -423,16 +423,16 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
-    set guioptions-=T
-    set guioptions+=e
-    set guioptions-=r
-    set guioptions-=L
-    set guitablabel=%M\ %t
-    set showtabline=1
-    set linespace=2
-    " set noimd
-    set t_Co=256
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+	set guioptions-=T
+	set guioptions+=e
+	set guioptions-=r
+	set guioptions-=L
+	set guitablabel=%M\ %t
+	set showtabline=1
+	set linespace=2
+	" set noimd
+	set t_Co=256
 endif
 
 " theme主题
