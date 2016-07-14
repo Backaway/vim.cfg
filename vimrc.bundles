@@ -27,6 +27,12 @@ Bundle 'gmarik/vundle'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'a.vim'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => protobuf.vim protobuf syntax highlighting and configuration files for editors to properly display Protocol Buffer files.
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'Backaway/protobuf.vim'
+
 " :A switches to the header file corresponding to the current file being edited (or vise versa)
 " :AS splits and switches
 " :AV vertical splits and switches
