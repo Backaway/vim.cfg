@@ -310,7 +310,7 @@ solarized主题
 
 # 插件部分
 
-####插件管理 [gmarik/vundle](https://github.com/gmarik/vundle)
+#### 插件管理 [gmarik/vundle](https://github.com/gmarik/vundle)
 
 必装,用于管理所有插件
 命令行模式下管理命令:
@@ -319,7 +319,7 @@ solarized主题
     :BundleInstall!    update
     :BundleClean       remove plugin not in list
 
-####多语言语法检查 [scrooloose/syntastic](https://github.com/scrooloose/syntastic)
+#### 多语言语法检查 [scrooloose/syntastic](https://github.com/scrooloose/syntastic)
 
 建议安装，静态语法及风格检查,支持多种语言
 
@@ -327,7 +327,7 @@ solarized主题
     
 ![syntastic](https://github.com/wklken/gallery/blob/master/vim/syntastic.png?raw=true)
 
-####代码自动补全 [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+#### 代码自动补全 [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
 必装，强烈推荐(YCM是我目前用到的最好的自动补全插件)
 
@@ -350,7 +350,7 @@ solarized主题
     ,gd  跳到声明位置, 仅 filetypes: c, cpp, objc, objcpp, python 有效
 
 
-####代码片段快速插入 [SirVer/ultisnips](https://github.com/SirVer/ultisnips)
+#### 代码片段快速插入 [SirVer/ultisnips](https://github.com/SirVer/ultisnips)
 
 必装，效率杀手锏，快速插入自定义的代码片段
 
@@ -362,7 +362,7 @@ solarized主题
 
 ![ultisnips](https://github.com/wklken/gallery/blob/master/vim/utilsnips.gif?raw=true)
 
-####快速注释 [scrooloose/nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+#### 快速注释 [scrooloose/nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 
 必装，另一个大大提升效率的地方，快速批量加减注释
 
@@ -378,7 +378,7 @@ solarized主题
 附:注释还有其他两种插件可选[tcomment](https://github.com/tomtom/tcomment_vim) 和[tpope/vim-commentary](https://github.com/tpope/vim-commentary)
 
 
-####快速编辑 [tpope/vim-surround](https://github.com/tpope/vim-surround) +[tpope/vim-repeat](https://github.com/tpope/vim-repeat)
+#### 快速编辑 [tpope/vim-surround](https://github.com/tpope/vim-surround) +[tpope/vim-repeat](https://github.com/tpope/vim-repeat)
 
 必装，很给力的功能，快速给词加环绕符号,例如引号
 
@@ -396,7 +396,7 @@ repeat进行增强,'.'可以重复命令
 
 ![surround](https://github.com/wklken/gallery/blob/master/vim/surround.gif?raw=true)
 
- ####位置跳转[Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
+ #### 位置跳转[Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
 
 必装，效率提升杀手锏，跳转到光标后任意位置
 
@@ -409,7 +409,7 @@ repeat进行增强,'.'可以重复命令
 
 ![easy_motion](https://github.com/wklken/gallery/blob/master/vim/easymotion.gif?raw=true)
 
-####多光标选中编辑 [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+#### 多光标选中编辑 [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 
 多光标批量操作
 
@@ -423,7 +423,7 @@ repeat进行增强,'.'可以重复命令
 
 ![multiple-cursors](https://raw.github.com/terryma/vim-multiple-cursors/master/assets/example1.gif)
 
-####搜索 [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
+#### 搜索 [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
 
 文件搜索,ack/Command-T需要依赖于外部包,不喜欢有太多依赖的,除非十分强大, 具体 [文档](http://kien.github.io/ctrlp.vim/)
 
@@ -438,7 +438,7 @@ repeat进行增强,'.'可以重复命令
 
 ![ctrip](https://github.com/wklken/gallery/blob/master/vim/ctrlp.gif?raw=true)
 
-####git 常用操作 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
+#### git 常用操作 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 
 git插件, 编辑文件时进行一些diff操作,例如diff
 
@@ -449,7 +449,7 @@ git插件, 编辑文件时进行一些diff操作,例如diff
 
 没有配置其他快捷键,可以参照github,自己增加修改映射
 
-####git状态 [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+#### git状态 [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 
 git,在同一个文件内,通过标记和高亮,显示本次文件变更点
 
@@ -458,7 +458,7 @@ git,在同一个文件内,通过标记和高亮,显示本次文件变更点
 
 ![gitgutter](https://raw.githubusercontent.com/airblade/vim-gitgutter/master/screenshot.png)
 
-####文件时光机 [sjl/gundo.vim](https://github.com/sjl/gundo.vim)
+#### 文件时光机 [sjl/gundo.vim](https://github.com/sjl/gundo.vim)
 
 编辑文件时光机
 
@@ -466,7 +466,7 @@ git,在同一个文件内,通过标记和高亮,显示本次文件变更点
 
 附:同类插件 [mbbill/undotree](https://github.com/mbbill/undotree)
 
-####状态栏增强 [vim-powerline](https://github.com/Lokaltog/vim-powerline)
+#### 状态栏增强 [vim-powerline](https://github.com/Lokaltog/vim-powerline)
 
 目前使用powerline, 可以用airline替换, airline的配置注释,需要的自行解开
 
@@ -474,11 +474,11 @@ git,在同一个文件内,通过标记和高亮,显示本次文件变更点
 
 ![powerline](https://camo.githubusercontent.com/63f9947cac196ec7e6e3d790fd3cd1e1463a7b9b/687474703a2f2f692e696d6775722e636f6d2f4d737549422e706e67)
 
-####[altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+#### [altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
 经典主题,目前我使用的,看起来舒服
 
-####目录树 [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+#### 目录树 [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
 
 必装,开启目录树导航
 
@@ -507,7 +507,7 @@ git,在同一个文件内,通过标记和高亮,显示本次文件变更点
 
 ![thenerdtree](https://github.com/wklken/gallery/blob/master/vim/thenerdtree.gif?raw=true)
 
-####Tag [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
+#### Tag [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
 
 必装,标签导航,纬度和taglist不同, taglist的替代者
 
@@ -519,7 +519,7 @@ git,在同一个文件内,通过标记和高亮,显示本次文件变更点
 
 ![tagbar](https://github.com/wklken/gallery/blob/master/vim/tagbar.gif?raw=true)
 
-####Markdown
+#### Markdown
 
 [plasticboy/vim-markdown](https://github.com/plasticboy/vim-markdown)
 
