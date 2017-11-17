@@ -432,3 +432,14 @@ Bundle 'evanmiller/nginx-vim-syntax'
 " => maven vim插件
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'mikelue/vim-maven-plugin'
+
+Bundle 'junegunn/vim-easy-align'
+vmap <Leader>a <Plug>(EasyAlign)
+nmap <Leader>a <Plug>(EasyAlign)
+if !exists('g:easy_align_delimiters')
+  let g:easy_align_delimiters = {}
+endif
+let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
+
+Bundle 'pangloss/vim-javascript'
+let g:javascript_plugin_jsdoc = 1
